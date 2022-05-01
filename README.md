@@ -1,1 +1,3 @@
 # amarilla
+
+Run `make`.
