@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  grocy:
+    container_name: "grocy"
+    image: "lscr.io/linuxserver/grocy:3.3.0"
+    environment:
+      PGID: "1000"
+      PUID: "1000"
+      TZ: "America/Los_Angeles"
+    ports:
+    - published: 443
+      target: 443
+    volumes:
+    - "./config:/config:rw"
+    - "/etc/letsencrypt:/etc/letsencrypt:ro"
+    restart: "unless-stopped"
